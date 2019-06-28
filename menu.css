@@ -1,0 +1,57 @@
+
+
+.menu {font-size:0;}
+.menu * {box-sizing:border-box;}
+.menu ul {margin:0; padding:0; list-style:none;}
+.menu a {
+	display:block; position:relative; height:40px; line-height:40px; text-align:left; text-decoration:none; text-align:;
+	overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
+}
+.menu .dep1 > li > a {
+	padding:0 15px 0 30px; border-bottom:1px solid #111111; background:#252525; font-size:24px; color:#d7d7d7;
+}
+.menu .dep1 > li > a:before {
+	content:''; display:block; position:absolute; left:20px; top:50%; width:3px; height:3px; margin-top:-1px; background:#d7d7d7;
+}
+.menu .dep2 > li > a {
+padding:0 15px 0 45px; border-bottom:1px solid #111111; background:#363636; font-size:20px; color:#d7d7d7;
+}
+.menu .dep3_li > a:before {content:'- '; padding-left:15px;}
+
+@media (min-width:1024px){
+	/* dep1 */
+	.menu .dep1:after {content:''; display:block; clear:both;}
+	.menu .dep1 > li {float:left; position:relative; z-index:600; width:20%;}
+	.menu .dep1 > li:hover {z-index:610; background:#4d8a5f;}
+	.menu .dep1 > li > div {
+		display:none; position:absolute; left:0; width:100%; padding:5px 0;
+		border:0px solid #ffffff; background:#363636;
+	}
+	.menu .dep1 > li:hover > div {display:block;}
+	.menu .dep1 > li > a {
+		z-index:620; height:50px; line-height:50px; padding:0 20px;
+		border-bottom:none; background:none; color:#d7d7d7; text-align:center;  font-weight:bold;
+	}
+	.menu .dep1 > li.on > a,
+	.menu .dep1 > li:hover > a {color:#ffffff;}
+	.menu .dep1 > li > a:before {display:none;}
+
+	/* dep2 */
+	.menu .dep2 > li > a {
+		height:30px; line-height:30px; padding:0 20px;
+		border-bottom:none; background:#363636; color:#d7d7d7; font-weignt:none; font-size:20px;
+	}
+	.menu .dep2 > li.on > a,
+	.menu .dep2 > li:hover > a {background:#252525; color:#ffffff;}
+
+	/* dep1 triangle */
+	.menu .dep1 > li.has_sub:before,
+	.menu .dep1 > li.has_sub:after {
+		content:''; display:none; position:absolute; left:50%; z-index:630; margin-left:-8px;
+		border-left:8px solid transparent; border-right:8px solid transparent;
+	}
+	.menu .dep1 > li.has_sub:before {bottom:0; border-bottom:8px solid #363636;}
+	.menu .dep1 > li.has_sub:after {bottom:-3px; border-bottom:8px solid #363636;}
+	.menu .dep1 > li.has_sub:hover:before,
+	.menu .dep1 > li.has_sub:hover:after {display:block;}
+}
